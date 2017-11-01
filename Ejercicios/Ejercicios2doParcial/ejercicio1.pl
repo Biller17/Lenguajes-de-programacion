@@ -70,6 +70,6 @@ splitterbueno(ARR, A, B):- append(X,Y,ARR), length(X,A), length(Y,B), A=:=B , !.
 /***********************************Ejercicio maximo***************************************************/
 
 
-getmax([], Max).
-getmax([H|T], Max):- H > Max, getmax(T, H).
-getmax([H|T], Max):- H =< Max, getmax(T, H).
+getmax([],N, M):- M is N.
+getmax([H|T],N, M):- H > N, getmax(T, H, M).
+getmax([H|T],N, M):- H =< N, getmax(T, N, M).
